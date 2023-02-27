@@ -1,0 +1,56 @@
+<main class="contenedor">
+  <form action="/vacantes/nueva" method="POST" class="default-form">
+    <h3>Información General</h3>
+    
+    <div class="campo">
+      <label for="titulo">Titulo</label>
+      <input type="text" id="titulo" name="titulo" placeholder="Ejemplo: React Developer"  >
+    </div>
+
+    <div class="campo">
+      <label for="empresa">Empresa</label>
+      <input type="text" id="empresa" name="empresa" placeholder="Ejemplo: Empresa Contrata"  >
+    </div>
+    
+    <div class="campo">
+      <label for="ubicacion">Ubicación</label>
+      <input type="text" id="ubicacion" name="ubicacion" placeholder="Ejemplo: México o Remoto"  >
+    </div>
+
+    <div class="campo">
+      <label for="salario">Salario (USD)</label>
+      <input type="text" id="salario" name="salario" placeholder="Ejemplo: $500 USD"  >
+    </div>
+
+    <div class="campo">
+      <label>Contrato</label>
+      <select name="contrato">
+        <option value="" disabled selected>--Selecciona--</option>
+        <option value="Freelance">Freelance</option>
+        <option value="Tiempo Completo">Tiempo Completo</option>
+        <option value="Medio Tiempo">Medio Tiempo</option>
+        <option value="Por Proyecto">Por Proyecto</option>
+      </select>
+    </div>
+
+    <h3>Descripción del Puesto</h3>
+    <div class="campo descripcion">
+      <label for="">Descripción</label>
+
+      <input type="hidden" name="descripcion" id="x">
+      <trix-editor input="x"></trix-editor>
+    </div>
+
+    <h3>Conocimientos</h3>
+    <ul class="lista-conocimientos">
+      {{#seleccionarSkills a}}
+      {{/seleccionarSkills}}
+    </ul>
+
+    <div class="campo centrar-horizontal">
+      <input type="hidden" name="skills" id="skills">
+      <input type="submit" value="Publicar" class="btn btn-azul">
+    </div>
+
+  </form>
+</main>
